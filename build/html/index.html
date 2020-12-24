@@ -1,0 +1,295 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to DEMBody! &mdash; DEMBody v1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/zon.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/zon.ico"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Gallery" href="Gallery.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+<a href="#">
+<img src="_static/zon.png" class="logo" alt="Logo"/>
+ DEMBody
+</a>
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to DEMBody!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gallery.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FeaturedWork.html">Featured work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VersionHistory.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+</ul>
+
+            
+          
+
+
+<ul style="margin-top: 2em">
+  <li class="toctree-l1"><a class="reference external" href="https://github.com/zeitonline/DEMBody/edit/master/index.rst" target="_blank">Diese Seite editieren</a></li>
+</ul>
+
+
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">DEMBody</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Welcome to DEMBody!</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <p><strong>We are sorry that DEMBody is not ready for open source because this website is still under developed now, but it will be published soon!</strong></p>
+<a class="reference internal image-reference" href="_images/DEMBodyLogo.png"><img alt="_images/DEMBodyLogo.png" class="align-left" src="_images/DEMBodyLogo.png" style="height: 250px;" /></a>
+<div class="section" id="welcome-to-dembody">
+<h1>Welcome to DEMBody!<a class="headerlink" href="#welcome-to-dembody" title="Permalink to this headline">¶</a></h1>
+<p>DEMBody is Open Source software for Granular Dynamics Simulation for Planetary Science and Geophysics.</p>
+<p>DEMBody stands for Discrete Element Model Body, which incorperates classical granular dynamics simulations and N-body self-gravity calculation. The software focus on investigation of geological features, surface evolution and in-situ exploration on small celestial bodies, e.g., size sorting/segregation on asteroids, mass creeping/wasting during geological processes and locomotion dynamics of the small body lander/rover on granular regolith. But it can be easily customized to accurately and efficiently solve other problems in astrophysics, e.g., planetesimals, moons, ring or dust particles.</p>
+<p>The software implements the Soft-Sphere Discrete Element Model (<a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_element_method">SSDEM</a>), coupled with the N-body gravity integrator. Parallized with OpenMP (for shared memory systems) and MPI (for distributed memory systems), DEMBody can execute on supercomputers, clusters or multi-core PCs running a Linux (or Windows)-based operating system.</p>
+<p>DEMBody (Fortran version) is fully open-source now and can be downloaded freely from <a class="reference external" href="http://github.com/hannorein/rebound">http://github.com/hannorein/rebound</a>. The C/C++ version is still under developed. We are considering a Python wrapper API and a GPU-accelerated module in the future.</p>
+<p>If you use this code or parts of this code for results presented in a scientific publication, we would greatly appreciate a citation eithor to this code or to our published papers.</p>
+<div class="section" id="how-to-use-dembody">
+<h2>How to use DEMBody<a class="headerlink" href="#how-to-use-dembody" title="Permalink to this headline">¶</a></h2>
+<p>These instructions will get you a copy of the project for development and testing purposes.</p>
+</div>
+<div class="section" id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
+<p>DEMBody and it’s pre-/post-processing tools are developed, distributed and maintained by our team, with major contributions from:</p>
+<ul class="simple">
+<li><p><strong>Bin Cheng</strong> - Tsinghua University - <strong>Key developer</strong> - <a class="reference external" href="mailto:chengbin&#46;thu&#37;&#52;&#48;gmail&#46;com">chengbin<span>&#46;</span>thu<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+<li><p><strong>Yang Yu</strong> - Beihang University - <em>Polyhedron module</em></p></li>
+<li><p><strong>Yun Zhang</strong> - Tsinghua University - <em>Initial work</em></p></li>
+<li><p>and many others!</p></li>
+</ul>
+<p>DEMBody is open source. We are always willing to welcome new developers interested in contributing to the code. If you need help, please contact Bin Cheng (<a class="reference external" href="mailto:chengbin&#46;thu&#37;&#52;&#48;gmail&#46;com">chengbin<span>&#46;</span>thu<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p>
+</div>
+<div class="section" id="papers-based-on-dembody">
+<h2>Papers based on DEMBody<a class="headerlink" href="#papers-based-on-dembody" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Cheng, B., Yu, Y., Asphaug, E., Michel, P., Richardson, D. C., Hirabayashi, M., Yoshikawa, M., &amp; Baoyin, H. Reconstructing the formation history of top-shaped asteroids from the surface boulder distribution, <em>Nature Astronomy</em>, 2020, <a class="reference external" href="https://doi.org/10.1038/s41550-020-01226-7">https://doi.org/10.1038/s41550-020-01226-7</a></p></li>
+<li><p>Cheng, B., Yu, Y., &amp; Baoyin, H. Numerical simulations of the controlled motion of a hopping asteroid lander on the regolith surface, <em>Monthly Notices of the Royal Astronomical Society</em>, 2019, <a class="reference external" href="https://doi.org/10.1093/mnras/stz633">https://doi.org/10.1093/mnras/stz633</a></p></li>
+<li><p>Cheng, B., Yu, Y., &amp; Baoyin, H. Collision-based understanding of the force law in granular impact dynamics, <em>Physical Review E</em>, 2018, <a class="reference external" href="https://doi.org/10.1103/PhysRevE.98.012901">https://doi.org/10.1103/PhysRevE.98.012901</a></p></li>
+<li><p>Cheng, B., Yu, Y., &amp; Baoyin, H. Asteroid surface impact sampling: dependence of the cavity morphology and collected mass on projectile shape, <em>Scientific Reports</em>, 2017, <a class="reference external" href="https://doi.org/10.1038/s41598-017-10681-8">https://doi.org/10.1038/s41598-017-10681-8</a></p></li>
+</ol>
+</div>
+<div class="section" id="license">
+<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<p>DEMBody is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation.</p>
+</div>
+<div class="section" id="acknowledgments">
+<h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>We thank all colleagues in Laboratory of AstroDynamics at Tsinghua Univerisity</p></li>
+<li><p>We thank <a class="reference external" href="https://www.cfdem.com/liggghts-open-source-discrete-element-method-particle-simulation-code">LIGGGHTS</a>, <a class="reference external" href="https://rebound.readthedocs.io/en/latest/index.html">REBOUND</a>, <a class="reference external" href="https://launchpad.net/esys-particle">ESyS-Particle</a> and other open-sourced particle codes for sharing their data structures, parallelization algorithms, documentations and so on!</p></li>
+</ul>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Welcome to DEMBody!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Gallery.html">Gallery</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#basic-mechanical-model">Basic mechanical model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#classical-granular-experiments">Classical granular experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#single-particle-tests">Single particle tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#cohesion-bridges">Cohesion bridges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#polyhedron-contact">Polyhedron contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#non-spherical-particle-elements">non-spherical particle elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#irregular-gravity-field">irregular gravity field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#force-chain-identification">force chain identification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#shear-periodic-boundary">shear/periodic boundary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FeaturedWork.html">Featured work</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="PhobosGrooves.html">Tidal disruption as the origin of Phobos grooves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TopShapedAsteroids.html">The formation of top-shaped asteroids</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HoppingLander.html">Controlled motion of a hopping lander on asteroid regolith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CollisionalModel.html">The resistance law in spacecraft-regolith interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AsteroidSampling.html">Asteroid surface impact sampling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="VersionHistory.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="VersionHistory.html#version-1-0">Version 1.0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick User Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#pre-post-process">Pre-/Post-process</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Gallery.html" class="btn btn-neutral float-right" title="Gallery" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Bin Cheng
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
