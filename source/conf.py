@@ -14,7 +14,6 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'DEMBody'
@@ -23,7 +22,6 @@ author = 'Bin Cheng'
 
 # The full version, including alpha/beta/rc tags
 release = 'v1.0'
-
 
 # -- General configuration ---------------------------------------------------
 
