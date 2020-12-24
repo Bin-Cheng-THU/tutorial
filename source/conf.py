@@ -54,7 +54,13 @@ exclude_patterns = []
 #html_theme = 'yummy_sphinx_theme'
 #html_theme = 'sphinx_rtd_theme'
 #html_theme = 'asteroid_sphinx_theme'
-html_theme = 'sphinx_zon_theme'
+html_theme = 'my_theme'
+
+html_theme_path = ['_templates']
+
+html_theme_options = {
+	'elasticsearch_host': None
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
