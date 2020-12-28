@@ -32,6 +32,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -83,17 +84,18 @@
 <li class="toctree-l2"><a class="reference internal" href="#classical-granular-experiments">Classical granular experiments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#single-particle-tests">Single particle tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cohesion-bridges">Cohesion bridges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#non-spherical-particle-elements">Non-spherical particle elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#polyhedron-contact">Polyhedron contact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#non-spherical-particle-elements">non-spherical particle elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#irregular-gravity-field">irregular gravity field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#force-chain-identification">force chain identification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#shear-periodic-boundary">shear/periodic boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#irregular-gravity-field">Irregular gravity field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#force-chain-identification">Force chain identification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shear-periodic-boundary">Shear/periodic boundary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="FeaturedWork.html">Featured work</a></li>
 <li class="toctree-l1"><a class="reference internal" href="VersionHistory.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Useful links</a></li>
 </ul>
 
             
@@ -168,14 +170,17 @@
             
   <div class="section" id="gallery">
 <h1>Gallery<a class="headerlink" href="#gallery" title="Permalink to this headline">¶</a></h1>
-<p>This is a blog-style collection of multimedia items related to DEMBody (graphics, animations, etc.). These items display an incomplete feature list of DEMBody, including cohesion bridges, polyhedron contact, non-spherical particle elements, irregular gravity field, force chain identification, shear/periodic boundary, and so on. You are welcome to use these items in presentations so long as they are appropriately cited.</p>
+<p>This is a blog-style collection of multimedia items related to DEMBody (graphics, animations, etc.). These items display an incomplete feature list of DEMBody, including <a class="reference internal" href="#cohesion-bridges">cohesion bridges</a>, <a class="reference internal" href="#polyhedron-contact">polyhedron contact</a>, <a class="reference internal" href="#non-spherical-particle-elements">non-spherical particle elements</a>, <a class="reference internal" href="#irregular-gravity-field">irregular gravity field</a>, <a class="reference internal" href="#force-chain-identification">force chain identification</a>, <a class="reference internal" href="#shear-periodic-boundary">shear/periodic boundary</a>, and so on. You are welcome to use these items in presentations so long as they are appropriately cited.</p>
 <div class="section" id="basic-mechanical-model">
 <h2>Basic mechanical model<a class="headerlink" href="#basic-mechanical-model" title="Permalink to this headline">¶</a></h2>
+<p>In this code, any two grains, or one grain and a basic element, interact via Hertzian normal force and Mindlin–Deresiewicz tangential force, which are described by combinations of nonlinear springs, viscous dashpots and frictional sliders as shown in the figure bellow.</p>
+<p>In addition, real grains have a certain degree of non-sphericity. To account for this characteristic, a physically based elastic-plastic spring-dashpot rotational model proposed by Jiang, et al., which incorporates rolling and twisting forces, was implemented into DEMBody.</p>
+<p>For small rubble piles in a low-gravity, ultra-high-vacuum environment, the van der Waals force between constituent grains becomes relevant.  Therefore, inspired  by  the  granular  bridge idea proposed by Sánchez and Scheeres, a simple dry cohesion model was adopted to mimic the weak attractive inter-particle forces in asteroid regolith. Please refer to <a class="reference internal" href="index.html#papers-based-on-dembody"><span class="std std-ref">our papers</span></a> for more details.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/DEMmodel.jpg"><img alt="_images/DEMmodel.jpg" src="_images/DEMmodel.jpg" style="height: 300px;" /></a>
+<img alt="_images/DEMmodel.jpg" src="_images/DEMmodel.jpg" />
 </div>
-<table class="colwidths-auto docutils align-center" id="id9">
-<caption><span class="caption-text">Mechanical models used in DEMBody</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<table class="colwidths-auto docutils align-center" id="id12">
+<caption><span class="caption-text">Mechanical models used in DEMBody</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>Component</p></th>
 <th class="head"><p>Description</p></th>
@@ -183,57 +188,57 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Normal</p></td>
-<td><p>Hertz model, spring-dashpot <a class="footnote-reference brackets" href="#f1" id="id1">1</a><sup>,</sup> <a class="footnote-reference brackets" href="#f2" id="id2">2</a></p></td>
+<td><p>Hertz model, spring-dashpot <a class="footnote-reference brackets" href="#id7" id="id1">1</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Tangential</p></td>
-<td><p>Mindlin model, spring-dashpot-slider <a class="footnote-reference brackets" href="#f1" id="id3">1</a><sup>,</sup> <a class="footnote-reference brackets" href="#f2" id="id4">2</a></p></td>
+<td><p>Mindlin–Deresiewicz model, spring-dashpot-slider <a class="footnote-reference brackets" href="#id8" id="id2">2</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Rolling</p></td>
-<td><p>Jiang model, spring-dashpot-slider <a class="footnote-reference brackets" href="#f3" id="id5">3</a></p></td>
+<td><p>Jiang model, spring-dashpot-slider <a class="footnote-reference brackets" href="#id9" id="id3">3</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Twisting</p></td>
-<td><p>Jiang model, spring-dashpot-slider <a class="footnote-reference brackets" href="#f3" id="id6">3</a></p></td>
+<td><p>Jiang model, spring-dashpot-slider <a class="footnote-reference brackets" href="#id9" id="id4">3</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Juncture</p></td>
-<td><p>Scheeres model, dry cohesion bridge <a class="footnote-reference brackets" href="#f4" id="id7">4</a><sup>,</sup> <a class="footnote-reference brackets" href="#f5" id="id8">5</a></p></td>
+<td><p>Scheeres model, dry cohesion bridge <a class="footnote-reference brackets" href="#id10" id="id5">4</a><sup>,</sup> <a class="footnote-reference brackets" href="#id11" id="id6">5</a></p></td>
 </tr>
 </tbody>
 </table>
 <p class="rubric">References</p>
 <dl class="footnote brackets">
-<dt class="label" id="f1"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id3">2</a>)</span></dt>
+<dt class="label" id="id7"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
 <dd><p>Cundall, P. A., &amp; Strack, O. D. (1979). A discrete numerical model for granular assemblies. geotechnique, 29(1), 47-65.</p>
 </dd>
-<dt class="label" id="f2"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>)</span></dt>
+<dt class="label" id="id8"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>Wada, K., Senshu, H., &amp; Matsui, T. (2006). Numerical simulation of impact cratering on granular material. Icarus, 180(2), 528-545.</p>
 </dd>
-<dt class="label" id="f3"><span class="brackets">3</span><span class="fn-backref">(<a href="#id5">1</a>,<a href="#id6">2</a>)</span></dt>
+<dt class="label" id="id9"><span class="brackets">3</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id4">2</a>)</span></dt>
 <dd><p>Jiang, M., Shen, Z., &amp; Wang, J. (2015). A novel three-dimensional contact model for granulates incorporating rolling and twisting resistances. Computers and Geotechnics, 65, 147-163.</p>
 </dd>
-<dt class="label" id="f4"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id5">4</a></span></dt>
 <dd><p>Sánchez, P., &amp; Scheeres, D. J. (2014). The strength of regolith and rubble pile asteroids. Meteoritics &amp; Planetary Science, 49(5), 788-811.</p>
 </dd>
-<dt class="label" id="f5"><span class="brackets"><a class="fn-backref" href="#id8">5</a></span></dt>
+<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id6">5</a></span></dt>
 <dd><p>Zhang, Y., Richardson, D. C., Barnouin, O. S., Michel, P., Schwartz, S. R., &amp; Ballouz, R. L. (2018). Rotational failure of rubble-pile bodies: influences of shear and cohesive strengths. The Astrophysical Journal, 857(1), 15.</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="classical-granular-experiments">
 <h2>Classical granular experiments<a class="headerlink" href="#classical-granular-experiments" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default">
+<table class="colwidths-given docutils align-center">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-center" id="id10">
-<a class="reference internal image-reference" href="_images/Hopper.gif"><img alt="_images/Hopper.gif" src="_images/Hopper.gif" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-text">Funnel discharge and pile-up of a sandpile.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<tr class="row-odd"><td><div class="figure align-center" id="id13">
+<a class="reference internal image-reference" href="_images/Hopper.gif"><img alt="_images/Hopper.gif" src="_images/Hopper.gif" style="height: 290px;" /></a>
+<p class="caption"><span class="caption-text">Funnel discharge and pile-up of a sandpile.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><div class="figure align-center" id="id11">
-<a class="reference internal image-reference" href="_images/Pouring.gif"><img alt="_images/Pouring.gif" src="_images/Pouring.gif" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-text">Pouring particles into a box.</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<td><div class="figure align-center" id="id14">
+<a class="reference internal image-reference" href="_images/Pouring.gif"><img alt="_images/Pouring.gif" src="_images/Pouring.gif" style="height: 290px;" /></a>
+<p class="caption"><span class="caption-text">Pouring particles into a box.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -245,14 +250,14 @@
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-center" id="id12">
-<a class="reference internal image-reference" href="_images/landslide.gif"><img alt="_images/landslide.gif" src="_images/landslide.gif" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-text">Brazil-nut effect showing large boulders shaken to the top of a granular bed.</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<tr class="row-odd"><td><div class="figure align-center" id="id15">
+<a class="reference internal image-reference" href="_images/BNE.gif"><img alt="_images/BNE.gif" src="_images/BNE.gif" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Brazil-nut effect showing large boulders shaken to the top of a granular bed.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><div class="figure align-center" id="id13">
+<td><div class="figure align-center" id="id16">
 <a class="reference internal image-reference" href="_images/landslide.gif"><img alt="_images/landslide.gif" src="_images/landslide.gif" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-text">Size-segration during bidisperse granular avalanches.</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Size-segration during bidisperse granular avalanches.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -261,31 +266,33 @@
 </div>
 <div class="section" id="single-particle-tests">
 <h2>Single particle tests<a class="headerlink" href="#single-particle-tests" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-given docutils align-default">
+<p>Numerous rolling resistance models have been proposed by different researchers. In DEMBody, we used a so-called <em>elastic-plastic spring-dashpot</em> model. This model consists of two components: a mechanical spring torque and a viscous damping torque. Due to that this model is phiscally derived, it overcomes the limitations of previous models that they always contain many artifical parameters which need to be chosen by trial and error. Moreover, this model is applicable to not only dynamical systems but pseudo-static systems.</p>
+<p>Here we test the model by a single disk rolling on a flat or a inclined surface. In flat surface cases, the disk was allowed to settle under Earth-gravity and then got an initial translational velocity and zero initial angular velocity. We found the disk come to a pure rolling state if without rolling frictions. When rolling frictions are included, the rolling distance finnaly approached a terminal constant value. In inclined surface cases, the disk was dropped onto a inclined surface under Earth-gravity. We found the disk keep speeding up on the slope without rolling resistances, while if rolling coefficients are large enough, the disk could maintain stable on the inclined plane and be arrested by the rolling resistances that prevent the downward rolling due to gravity.</p>
+<table class="colwidths-given docutils align-center">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-default" id="id14">
-<a class="reference internal image-reference" href="_images/DEMBodyLogo.png"><img alt="_images/DEMBodyLogo.png" src="_images/DEMBodyLogo.png" style="height: 100px;" /></a>
-<p class="caption"><span class="caption-text">A sphere with a intial horizon velocity moving on a plane without rolling friction.</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<tr class="row-odd"><td><div class="figure align-center" id="id17">
+<a class="reference internal image-reference" href="_images/withoutRolling.gif"><img alt="_images/withoutRolling.gif" src="_images/withoutRolling.gif" style="height: 135px;" /></a>
+<p class="caption"><span class="caption-text">A sphere with a intial horizon velocity moving on a plane without rolling friction.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><div class="figure align-default" id="id15">
-<a class="reference internal image-reference" href="_images/DEMBodyLogo.png"><img alt="_images/DEMBodyLogo.png" src="_images/DEMBodyLogo.png" style="height: 100px;" /></a>
-<p class="caption"><span class="caption-text">A sphere with a intial horizon velocity moving on a plane with rolling friction.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+<td><div class="figure align-center" id="id18">
+<a class="reference internal image-reference" href="_images/withRolling.gif"><img alt="_images/withRolling.gif" src="_images/withRolling.gif" style="height: 135px;" /></a>
+<p class="caption"><span class="caption-text">A sphere with a intial horizon velocity moving on a plane with rolling friction.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><div class="figure align-default" id="id16">
-<a class="reference internal image-reference" href="_images/DEMBodyLogo.png"><img alt="_images/DEMBodyLogo.png" src="_images/DEMBodyLogo.png" style="height: 100px;" /></a>
-<p class="caption"><span class="caption-text">A sphere falling on a inclined plane without rolling friction.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<tr class="row-even"><td><div class="figure align-center" id="id19">
+<a class="reference internal image-reference" href="_images/withoutRollingIncline.gif"><img alt="_images/withoutRollingIncline.gif" src="_images/withoutRollingIncline.gif" style="height: 135px;" /></a>
+<p class="caption"><span class="caption-text">A sphere falling on a inclined plane without rolling friction.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </td>
-<td><div class="figure align-default" id="id17">
-<a class="reference internal image-reference" href="_images/DEMBodyLogo.png"><img alt="_images/DEMBodyLogo.png" src="_images/DEMBodyLogo.png" style="height: 100px;" /></a>
-<p class="caption"><span class="caption-text">A sphere falling on a inclined plane with rolling friction.</span><a class="headerlink" href="#id17" title="Permalink to this image">¶</a></p>
+<td><div class="figure align-center" id="id20">
+<a class="reference internal image-reference" href="_images/withRollingIncline.gif"><img alt="_images/withRollingIncline.gif" src="_images/withRollingIncline.gif" style="height: 135px;" /></a>
+<p class="caption"><span class="caption-text">A sphere falling on a inclined plane with rolling friction.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -294,49 +301,22 @@
 </div>
 <div class="section" id="cohesion-bridges">
 <h2>Cohesion bridges<a class="headerlink" href="#cohesion-bridges" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="polyhedron-contact">
-<h2>Polyhedron contact<a class="headerlink" href="#polyhedron-contact" title="Permalink to this headline">¶</a></h2>
-<p>Triangular meshes for specifying boundary walls and movable bodies. 6-DOF enabled.</p>
-<table class="colwidths-given docutils align-default">
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><div class="figure align-center" id="id18">
-<a class="reference internal image-reference" href="_images/cone.gif"><img alt="_images/cone.gif" src="_images/cone.gif" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-text">A cone dropping onto a granular bed.</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
-</div>
-</td>
-<td><div class="figure align-center" id="id19">
-<a class="reference internal image-reference" href="_images/hemisphere.gif"><img alt="_images/hemisphere.gif" src="_images/hemisphere.gif" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-text">A hemisphere dropping onto a granular bed.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
-</div>
-</td>
-<td><div class="figure align-center" id="id20">
-<a class="reference internal image-reference" href="_images/cylinder.gif"><img alt="_images/cylinder.gif" src="_images/cylinder.gif" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-text">A cylinder dropping onto a granular bed.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-<table class="colwidths-given docutils align-default">
+<p>In DEMBody, we adopt a simple dry cohesion model inspired by the granular bridge idea proposed by Sánchez and Scheeres. The cohesion forces that bond contacting particles together could significantly increase the structural strength of rubble-piles.</p>
+<p>Here is an example by DEMBody, which demonstrates the collisional behavior of self-gravity granular assemblies with or without cohesion. We found the largested remnant retains almost all of the system mass in the cohesive case. While the cohesion-less precursor was highly fragmented with ejected debris scattered far and wide.</p>
+<table class="colwidths-given docutils align-center">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><div class="figure align-center" id="id21">
-<a class="reference internal image-reference" href="_images/RoverHopping.gif"><img alt="_images/RoverHopping.gif" src="_images/RoverHopping.gif" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-text">Small body rover showing hopping manoeuvre.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="_images/impactCohesion.gif"><img alt="_images/impactCohesion.gif" src="_images/impactCohesion.gif" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-text">Impact onto a cohesive granular assembly.</span><a class="headerlink" href="#id21" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 <td><div class="figure align-center" id="id22">
-<a class="reference internal image-reference" href="_images/RoverTumbling.gif"><img alt="_images/RoverTumbling.gif" src="_images/RoverTumbling.gif" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-text">Small body rover showing tumbling manoeuvre.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="_images/impactCohesionless.gif"><img alt="_images/impactCohesionless.gif" src="_images/impactCohesionless.gif" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-text">Impact onto a loose granular assembly.</span><a class="headerlink" href="#id22" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -344,9 +324,9 @@
 </table>
 </div>
 <div class="section" id="non-spherical-particle-elements">
-<h2>non-spherical particle elements<a class="headerlink" href="#non-spherical-particle-elements" title="Permalink to this headline">¶</a></h2>
-<p>Bonded particles to model realistic shape and particle inertia.</p>
-<table class="colwidths-given docutils align-default">
+<h2>Non-spherical particle elements<a class="headerlink" href="#non-spherical-particle-elements" title="Permalink to this headline">¶</a></h2>
+<p>Real rocks are of course not perfectly spherical. One method is to use general polygons to approximate the irregular particles. But as you could expect, polygon contact calculation is very time consuming. Therefore, in DEMBody, we implement a bonded-sphere method to roughly represent irregular rocks, which we believe is a good banlance between the efficiency and the accuracy.</p>
+<table class="colwidths-given docutils align-center">
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -354,20 +334,75 @@
 <col style="width: 25%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-default">
+<tr class="row-odd"><td><div class="figure align-center">
 <a class="reference internal image-reference" href="_images/square.png"><img alt="_images/square.png" src="_images/square.png" style="height: 120px;" /></a>
 </div>
 </td>
-<td><div class="figure align-default">
+<td><div class="figure align-center">
 <a class="reference internal image-reference" href="_images/stripe.png"><img alt="_images/stripe.png" src="_images/stripe.png" style="height: 120px;" /></a>
 </div>
 </td>
-<td><div class="figure align-default">
+<td><div class="figure align-center">
 <a class="reference internal image-reference" href="_images/triangle.png"><img alt="_images/triangle.png" src="_images/triangle.png" style="height: 120px;" /></a>
 </div>
 </td>
-<td><div class="figure align-default">
+<td><div class="figure align-center">
 <a class="reference internal image-reference" href="_images/ball.png"><img alt="_images/ball.png" src="_images/ball.png" style="height: 120px;" /></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id23">
+<a class="reference internal image-reference" href="_images/impact.gif"><img alt="_images/impact.gif" src="_images/impact.gif" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Impact between two sphere-aggregation.</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id24">
+<a class="reference internal image-reference" href="_images/pileup.gif"><img alt="_images/pileup.gif" src="_images/pileup.gif" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Pileup of sphere-aggregations.</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="polyhedron-contact">
+<h2>Polyhedron contact<a class="headerlink" href="#polyhedron-contact" title="Permalink to this headline">¶</a></h2>
+<p>In order to simulate the interactions between spherical grains and irregular bodies, an additional method is implemented by using combinations of movable reactive walls, e.g., circular surfaces, cylindrical sidewalls and jointing edges, and so on. The walls in different geometries are applied for detection of the surface–sphere, edge–sphere and corner-sphere contacts, respectively. Now this method has been extended to tri-mesh pholyhedrons. We even added rigid robotic dynamics to the polyhedron. By using this feature, DEMBody can simulate the robotics operating on granular beds.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id25">
+<a class="reference internal image-reference" href="_images/elements.gif"><img alt="_images/elements.gif" src="_images/elements.gif" style="height: 170px;" /></a>
+<p class="caption"><span class="caption-text">Irregular bodies dropping onto a granular bed.</span><a class="headerlink" href="#id25" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 57%" />
+<col style="width: 43%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id26">
+<a class="reference internal image-reference" href="_images/RoverHopping.gif"><img alt="_images/RoverHopping.gif" src="_images/RoverHopping.gif" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-text">A hopping manoeuvre of a small body rover.</span><a class="headerlink" href="#id26" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id27">
+<a class="reference internal image-reference" href="_images/sandwheel.gif"><img alt="_images/sandwheel.gif" src="_images/sandwheel.gif" style="height: 200px;" /></a>
+<p class="caption"><span class="caption-text">A sand wheel.</span><a class="headerlink" href="#id27" title="Permalink to this image">¶</a></p>
 </div>
 </td>
 </tr>
@@ -375,23 +410,106 @@
 </table>
 </div>
 <div class="section" id="irregular-gravity-field">
-<h2>irregular gravity field<a class="headerlink" href="#irregular-gravity-field" title="Permalink to this headline">¶</a></h2>
-<p>Simulating dynamics of particle sysyem in the vicinity of asteroids needs to calculate irregular gravity fields.</p>
-<div class="figure align-center" id="id23">
+<h2>Irregular gravity field<a class="headerlink" href="#irregular-gravity-field" title="Permalink to this headline">¶</a></h2>
+<p>Simulating dynamics of a particle sysyem around a small body requires calculating its gravity. However, the gravity field in the vicinity of an asteroid is far from simple, but irregular and complex. Previous works used a rigid gravitational aggregate of indestructible spheres to represent the asteroid, and thus to calculate both its gravity and possible contact with moving grains. However, this method requires filling tens of thousands of particles inside the asteroid as the body and millions of particles on its surface as the shape, which significantly slows down the simulations.</p>
+<div class="figure align-center" id="id28">
 <a class="reference internal image-reference" href="_images/gravityField.png"><img alt="_images/gravityField.png" src="_images/gravityField.png" style="height: 130px;" /></a>
-<p class="caption"><span class="caption-text">Global map of surface gravity across three typical asteroids (Bennu, Itokawa and Eros).</span><a class="headerlink" href="#id23" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Global map of surface gravity across three typical asteroids (Bennu, Itokawa and Eros).</span><a class="headerlink" href="#id28" title="Permalink to this image">¶</a></p>
 </div>
+<p>In DEMBody, we can do it much better:) DEMBody added a polyhedron module, which can calculate the gravitational force of an asteroid very fast. And, by using the tri-mesh contact module mentional above, we no longer need millions of particles to represent the geomorphology. Just use polyhedron to do everything.</p>
+<p>Here is an example by DEMBody, which demonstrates the behavior of particles falling onto asteroids with different rotation velocities (in body-fixed frame).</p>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id29">
+<a class="reference internal image-reference" href="_images/lowRotation.gif"><img alt="_images/lowRotation.gif" src="_images/lowRotation.gif" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Spread almost evenly on the surface.</span><a class="headerlink" href="#id29" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id30">
+<a class="reference internal image-reference" href="_images/highRotation.gif"><img alt="_images/highRotation.gif" src="_images/highRotation.gif" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Orbit near the equator.</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="force-chain-identification">
-<h2>force chain identification<a class="headerlink" href="#force-chain-identification" title="Permalink to this headline">¶</a></h2>
-<p>Force chains form heterogeneous structures that determine the mechanical behavior of granular systems.</p>
-<div class="figure align-center" id="id24">
-<a class="reference internal image-reference" href="_images/collisionForceChain.jpg"><img alt="_images/collisionForceChain.jpg" src="_images/collisionForceChain.jpg" style="height: 130px;" /></a>
-<p class="caption"><span class="caption-text">Force chains excited by intruders of different shapes impacting on granular medium:</span><a class="headerlink" href="#id24" title="Permalink to this image">¶</a></p>
+<h2>Force chain identification<a class="headerlink" href="#force-chain-identification" title="Permalink to this headline">¶</a></h2>
+<p>In the study of granular physics, a long-known hallmark is chains of particles that are held together and jammed into place by a network of mutual compressive forces. These <em>force chains</em> constitute the skeleton structure of particle systems, thus determine the mechanical behavior such as stability, elasticity and flowability. In DEMBody, we provide a easy way to extract this heterogeneous structure from point data generated by most DEM codes.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id31">
+<a class="reference internal image-reference" href="_images/forceChainCompare.gif"><img alt="_images/forceChainCompare.gif" src="_images/forceChainCompare.gif" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Comparison between force networks in granular impact experiments by Behringer, et al. and generated by DEMBody.</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id32">
+<a class="reference internal image-reference" href="_images/collisionForceChain.jpg"><img alt="_images/collisionForceChain.jpg" src="_images/collisionForceChain.jpg" style="height: 130px;" /></a>
+<p class="caption"><span class="caption-text">Force chains excited by intruders of different shapes impacting on granular medium.</span><a class="headerlink" href="#id32" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 62%" />
+<col style="width: 38%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id33">
+<a class="reference internal image-reference" href="_images/hoppingForceChain.jpg"><img alt="_images/hoppingForceChain.jpg" src="_images/hoppingForceChain.jpg" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Network excited by a hopping rover.</span><a class="headerlink" href="#id33" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id34">
+<a class="reference internal image-reference" href="_images/penetratingForceChain.jpg"><img alt="_images/penetratingForceChain.jpg" src="_images/penetratingForceChain.jpg" style="height: 250px;" /></a>
+<p class="caption"><span class="caption-text">Network excited by a intruder.</span><a class="headerlink" href="#id34" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="shear-periodic-boundary">
-<h2>shear/periodic boundary<a class="headerlink" href="#shear-periodic-boundary" title="Permalink to this headline">¶</a></h2>
+<h2>Shear/periodic boundary<a class="headerlink" href="#shear-periodic-boundary" title="Permalink to this headline">¶</a></h2>
+<p>For some systems like ring systems or regolith layers, modelling the entire system would be computational infeasible. Therefore, we need local simulations by restricting the computation volume to a small region. Periodic boundaries or shear periodic boundaries are adopted in such situations. PBCs are implemented by replicating a patch of particles in the <em>x</em> and/or <em>y</em> directions. Each replicated patch contains “ghost” particles that can interaction with “real” particles.</p>
+<p>Here are examples by DEMBody, which shows simulatiing boxes with PBC in the <em>x</em> direction and shear PBC in the <em>y</em> direction. We added diffusion and concentration forces into the two boxes, respectively.</p>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id35">
+<a class="reference internal image-reference" href="_images/shearPBC1.gif"><img alt="_images/shearPBC1.gif" src="_images/shearPBC1.gif" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-text">PBC and shear PBC with diffusion.</span><a class="headerlink" href="#id35" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id36">
+<a class="reference internal image-reference" href="_images/shearPBC2.gif"><img alt="_images/shearPBC2.gif" src="_images/shearPBC2.gif" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-text">PBC and shear PBC with concentration.</span><a class="headerlink" href="#id36" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 

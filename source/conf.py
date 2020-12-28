@@ -33,6 +33,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.mathjax",
     "sphinx.ext.viewcode",
+    "sphinx.ext.autosectionlabel",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -59,7 +60,8 @@ html_theme = 'my_theme'
 html_theme_path = ['_templates']
 
 html_theme_options = {
-	'elasticsearch_host': None
+	'elasticsearch_host': None,
+	'display_version': True
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,

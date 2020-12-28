@@ -32,6 +32,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -82,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="VersionHistory.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Useful links</a></li>
 </ul>
 
             
@@ -154,26 +156,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <p><strong>We are sorry that DEMBody is not ready for open source because this website is still under developed now, but it will be published soon!</strong></p>
+  <p><strong>We are sorry that DEMBody is not ready for open source as this website is still under development now, but it will be published soon!</strong></p>
 <a class="reference internal image-reference" href="_images/DEMBodyLogo.png"><img alt="_images/DEMBodyLogo.png" class="align-left" src="_images/DEMBodyLogo.png" style="height: 250px;" /></a>
 <div class="section" id="welcome-to-dembody">
 <h1>Welcome to DEMBody!<a class="headerlink" href="#welcome-to-dembody" title="Permalink to this headline">¶</a></h1>
 <p>DEMBody is Open Source software for Granular Dynamics Simulation for Planetary Science and Geophysics.</p>
-<p>DEMBody stands for Discrete Element Model Body, which incorperates classical granular dynamics simulations and N-body self-gravity calculation. The software focus on investigation of geological features, surface evolution and in-situ exploration on small celestial bodies, e.g., size sorting/segregation on asteroids, mass creeping/wasting during geological processes and locomotion dynamics of the small body lander/rover on granular regolith. But it can be easily customized to accurately and efficiently solve other problems in astrophysics, e.g., planetesimals, moons, ring or dust particles.</p>
-<p>The software implements the Soft-Sphere Discrete Element Model (<a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_element_method">SSDEM</a>), coupled with the N-body gravity integrator. Parallized with OpenMP (for shared memory systems) and MPI (for distributed memory systems), DEMBody can execute on supercomputers, clusters or multi-core PCs running a Linux (or Windows)-based operating system.</p>
-<p>DEMBody (Fortran version) is fully open-source now and can be downloaded freely from <a class="reference external" href="http://github.com/hannorein/rebound">http://github.com/hannorein/rebound</a>. The C/C++ version is still under developed. We are considering a Python wrapper API and a GPU-accelerated module in the future.</p>
-<p>If you use this code or parts of this code for results presented in a scientific publication, we would greatly appreciate a citation eithor to this code or to our published papers.</p>
+<p>DEMBody stands for Discrete Element Model Body, which incorporates classical granular dynamics simulations and N-body self-gravity calculation. The software focus on investigation of geological features, surface evolution and in-situ exploration on small celestial bodies, e.g., size sorting/segregation on asteroids, mass creeping/wasting during geological processes and locomotion dynamics of the small body lander/rover on granular regolith. But it can be easily customized to accurately and efficiently solve other problems in astrophysics, e.g., simulating planetesimals, moons, ring or dust particles.</p>
+<p>The software implements the Soft-Sphere Discrete Element Model (<a class="reference external" href="https://en.wikipedia.org/wiki/Discrete_element_method">SSDEM</a>), coupled with the <a class="reference external" href="https://en.wikipedia.org/wiki/N-body_simulation">N-body gravity integrator</a>. Parallized with <a class="reference external" href="https://www.openmp.org/">OpenMP</a> (for shared memory systems) and <a class="reference external" href="https://www.open-mpi.org/">MPI</a> (for distributed memory systems), DEMBody can execute on supercomputers, clusters or multi-core PCs running a Linux-based (or Windows, but not recommended) operating system.</p>
+<p>DEMBody (Fortran version) is fully open-source now and can be downloaded freely from <a class="reference external" href="https://github.com/Bin-Cheng-THU/DEMBody.git">https://github.com/Bin-Cheng-THU/DEMBody.git</a>. The C/C++ version is still under development. We are considering a Python wrapper API and a GPU-accelerated module in the future.</p>
+<p>If you use this code or parts of this code for results presented in a scientific publication, we would greatly appreciate a citation eithor to this code or to our published papers listed below.</p>
 <div class="section" id="how-to-use-dembody">
 <h2>How to use DEMBody<a class="headerlink" href="#how-to-use-dembody" title="Permalink to this headline">¶</a></h2>
 <p>These instructions will get you a copy of the project for development and testing purposes.</p>
+<p>Please find  details in <a class="reference internal" href="quickstart.html#quick-user-guide"><span class="std std-ref">Quick User Guide</span></a>.</p>
+<p><strong>Under development…</strong></p>
 </div>
 <div class="section" id="contributors">
 <h2>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h2>
 <p>DEMBody and it’s pre-/post-processing tools are developed, distributed and maintained by our team, with major contributions from:</p>
 <ul class="simple">
 <li><p><strong>Bin Cheng</strong> - Tsinghua University - <strong>Key developer</strong> - <a class="reference external" href="mailto:chengbin&#46;thu&#37;&#52;&#48;gmail&#46;com">chengbin<span>&#46;</span>thu<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
-<li><p><strong>Yang Yu</strong> - Beihang University - <em>Polyhedron module</em></p></li>
-<li><p><strong>Yun Zhang</strong> - Tsinghua University - <em>Initial work</em></p></li>
+<li><p><strong>Yang Yu</strong> - Beihang University - <em>Polyhedron module</em> - <a class="reference external" href="mailto:yuyang&#46;thu&#37;&#52;&#48;gmail&#46;com">yuyang<span>&#46;</span>thu<span>&#64;</span>gmail<span>&#46;</span>com</a></p></li>
+<li><p><strong>Yun Zhang</strong> - Tsinghua University - <em>Initial framework</em></p></li>
 <li><p>and many others!</p></li>
 </ul>
 <p>DEMBody is open source. We are always willing to welcome new developers interested in contributing to the code. If you need help, please contact Bin Cheng (<a class="reference external" href="mailto:chengbin&#46;thu&#37;&#52;&#48;gmail&#46;com">chengbin<span>&#46;</span>thu<span>&#64;</span>gmail<span>&#46;</span>com</a>).</p>
@@ -194,7 +198,7 @@
 <div class="section" id="acknowledgments">
 <h2>Acknowledgments<a class="headerlink" href="#acknowledgments" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>We thank all colleagues in Laboratory of AstroDynamics at Tsinghua Univerisity</p></li>
+<li><p>We thank all colleagues in Laboratory of AstroDynamics at Tsinghua Univerisity for support.</p></li>
 <li><p>We thank <a class="reference external" href="https://www.cfdem.com/liggghts-open-source-discrete-element-method-particle-simulation-code">LIGGGHTS</a>, <a class="reference external" href="https://rebound.readthedocs.io/en/latest/index.html">REBOUND</a>, <a class="reference external" href="https://launchpad.net/esys-particle">ESyS-Particle</a> and other open-sourced particle codes for sharing their data structures, parallelization algorithms, documentations and so on!</p></li>
 </ul>
 </div>
@@ -208,17 +212,17 @@
 <li class="toctree-l2"><a class="reference internal" href="Gallery.html#classical-granular-experiments">Classical granular experiments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gallery.html#single-particle-tests">Single particle tests</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gallery.html#cohesion-bridges">Cohesion bridges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#non-spherical-particle-elements">Non-spherical particle elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Gallery.html#polyhedron-contact">Polyhedron contact</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Gallery.html#non-spherical-particle-elements">non-spherical particle elements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Gallery.html#irregular-gravity-field">irregular gravity field</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Gallery.html#force-chain-identification">force chain identification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Gallery.html#shear-periodic-boundary">shear/periodic boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#irregular-gravity-field">Irregular gravity field</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#force-chain-identification">Force chain identification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Gallery.html#shear-periodic-boundary">Shear/periodic boundary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="FeaturedWork.html">Featured work</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="PhobosGrooves.html">Tidal disruption as the origin of Phobos grooves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="TopShapedAsteroids.html">The formation of top-shaped asteroids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HoppingLander.html">Controlled motion of a hopping lander on asteroid regolith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HoppingLander.html">Controlled motion of a asteroid hopping rover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CollisionalModel.html">The resistance law in spacecraft-regolith interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AsteroidSampling.html">Asteroid surface impact sampling</a></li>
 </ul>
@@ -233,6 +237,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Useful links</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="link.html#particle-simulation-softwares">Particle simulation softwares</a></li>
+<li class="toctree-l2"><a class="reference internal" href="link.html#visualisation-tools">Visualisation Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="link.html#selected-small-body-missions">Selected small body missions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="link.html#others">Others</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>

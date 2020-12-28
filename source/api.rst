@@ -1,4 +1,6 @@
 API documentation
 =================
 
-These instructions will get you a copy of the project for development and testing purposes.
+This section of the documentation details the public API of DEMBody.
+
+Under development...

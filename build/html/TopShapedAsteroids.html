@@ -32,13 +32,14 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Controlled motion of a hopping lander on asteroid regolith" href="HoppingLander.html" />
+    <link rel="next" title="Controlled motion of a asteroid hopping rover" href="HoppingLander.html" />
     <link rel="prev" title="Tidal disruption as the origin of Phobos grooves" href="PhobosGrooves.html" /> 
 </head>
 
@@ -82,7 +83,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="FeaturedWork.html">Featured work</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="PhobosGrooves.html">Tidal disruption as the origin of Phobos grooves</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">The formation of top-shaped asteroids</a></li>
-<li class="toctree-l2"><a class="reference internal" href="HoppingLander.html">Controlled motion of a hopping lander on asteroid regolith</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HoppingLander.html">Controlled motion of a asteroid hopping rover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CollisionalModel.html">The resistance law in spacecraft-regolith interaction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AsteroidSampling.html">Asteroid surface impact sampling</a></li>
 </ul>
@@ -90,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="VersionHistory.html">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link.html">Useful links</a></li>
 </ul>
 
             
@@ -166,7 +168,54 @@
             
   <div class="section" id="the-formation-of-top-shaped-asteroids">
 <h1>The formation of top-shaped asteroids<a class="headerlink" href="#the-formation-of-top-shaped-asteroids" title="Permalink to this headline">¶</a></h1>
-<p>Some academic works using DEMBody code.</p>
+<p>Finding the basic mechanism governing the surface history of asteroids of various shapes is essential for understanding their origin and evolution. In particular, the currently visited asteroids (162173) Ryugu and (101955) Bennu by Hayabusa2 and OSIRIS-REx appear to be top-shaped. This distinctive shape, characterized by a raised equatorial bulge, is shared by other similarly sized asteroids, including Didymos A, 2008 EV5, 1999 KW4 Alpha and 1994 CC. However, the possibly common formation mechanism that causes the top-like shape is still under debate. <strong>One clue may lie in the boulders on their surfaces!</strong> The distribution of these boulders, that was precisely measured in unprecedented detail by the two spacecrafts, constitutes a record of the geological evolution of the surface regolith since the origin of these asteroids.</p>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/topShapedAsteroids.jpg"><img alt="_images/topShapedAsteroids.jpg" src="_images/topShapedAsteroids.jpg" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-text">Top-shaped asteroid family found in our Solar System.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Here, by DEM simulations using DEMBody, we show that during the regolith migration driven by YORP spin-up, the surface boulders co-evolve with the underlying regolith and exhibit diverse dynamical behaviors: they can remain undisturbed, sink into the regolith layer and become tilted, or totally be buried by the downslope deposition, depending on their latitudes. The predominant geological features commonly observed on top-shaped asteroids, including the boulder-rich region near the pole, the deficiency of large boulders at the equatorial area and partially buried, oblique boulders exposed on the regolith surface, are commensurate with this coevolution scenario. The surface regolith migration thus is the prevalent mechanism for the formation history of the top-shaped asteroids with stiffer cores.</p>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 100%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/evolution.jpg"><img alt="_images/evolution.jpg" src="_images/evolution.jpg" style="height: 150px;" /></a>
+<p class="caption"><span class="caption-text">Evolution of the regolith and boulder under the YORP effect.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="colwidths-given docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/yorp75.gif"><img alt="_images/yorp75.gif" src="_images/yorp75.gif" style="height: 270px;" /></a>
+<p class="caption"><span class="caption-text">Boulders at high latitudes sink into the regolith layer and become tilted.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/yorp30.gif"><img alt="_images/yorp30.gif" src="_images/yorp30.gif" style="height: 270px;" /></a>
+<p class="caption"><span class="caption-text">Boulders near the equator are totally buried by the migration debris.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Related paper:</strong> Cheng, B., Yu, Y., Asphaug, E., Michel, P., Richardson, D. C., Hirabayashi, M., Yoshikawa, M., &amp; Baoyin, H. Reconstructing the formation history of top-shaped asteroids from the surface boulder distribution, <em>Nature Astronomy</em>, 2020, <a class="reference external" href="https://doi.org/10.1038/s41550-020-01226-7">https://doi.org/10.1038/s41550-020-01226-7</a></p>
 </div>
 
 
@@ -177,7 +226,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="HoppingLander.html" class="btn btn-neutral float-right" title="Controlled motion of a hopping lander on asteroid regolith" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="HoppingLander.html" class="btn btn-neutral float-right" title="Controlled motion of a asteroid hopping rover" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="PhobosGrooves.html" class="btn btn-neutral float-left" title="Tidal disruption as the origin of Phobos grooves" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
