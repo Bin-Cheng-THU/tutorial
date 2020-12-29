@@ -10,6 +10,7 @@ Some academic works using DEMBody code.
    TopShapedAsteroids
    HoppingLander
    CollisionalModel
+   Penetrator
    AsteroidSampling
 
 
