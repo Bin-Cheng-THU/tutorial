@@ -183,9 +183,10 @@ In order to simulate the interactions between spherical grains and irregular bod
 
 .. list-table::
    :widths: 10
+   :align: center
 
    * - .. figure:: _static/elements.gif
-          :height: 170px
+          :height: 180px
           :align: center
 
           Irregular bodies dropping onto a granular bed.
